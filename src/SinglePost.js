@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import AppNev from "./AppNev";
 import Moment from "react-moment";
 import { Button, Container } from "reactstrap";
+import Spinner from "./Spinner";
 
 class SinglePost extends Component {
   emptyComment = {
@@ -55,7 +56,7 @@ class SinglePost extends Component {
   async downVote() {
     try {
       await fetch(
-        `http://localhost:8080/users/1/downVoteForAPost/${this.props.match.params.postid}`,
+        `http://localhost:8080/users/4/downVoteForAPost/${this.props.match.params.postid}`,
         {
           method: "POST",
           headers: {
@@ -149,7 +150,11 @@ class SinglePost extends Component {
         </div>
       );
     } else {
-      return <div>Loading</div>;
+      return (
+        <div>
+          <Spinner />
+        </div>
+      );
     }
   }
 }

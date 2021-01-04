@@ -6,7 +6,7 @@ class AppNev extends Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" dark expand="md">
+        <Navbar color="dark" green expand="md">
           <NavbarBrand href="/">Micro Blogging Application</NavbarBrand>
           <Nav className="ml-auto" navbar>
             <NavItem>

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AppNev from "./AppNev";
-
+import Spinner from "./Spinner";
 class User extends Component {
   state = {
     isLoading: true,
@@ -20,7 +20,12 @@ class User extends Component {
 
   render() {
     const { Users, isLoading } = this.state;
-    if (isLoading) return <div>Loading....</div>;
+    if (isLoading)
+      return (
+        <div>
+          <Spinner />
+        </div>
+      );
 
     return (
       <div>
